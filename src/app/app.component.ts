@@ -30,6 +30,8 @@ export class AppComponent implements OnInit, OnDestroy {
   private scrollSubscription!: Subscription;
   private observer!: IntersectionObserver;
 
+  constructor(private elementRef: ElementRef) {}
+
   ngOnInit(): void {
     this.observer = new IntersectionObserver(
       (entries) => {
@@ -46,6 +48,8 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   todosCompleted = computed(() => {
+    this.scrollSubscription.unsubscribe();
+
     return this.todoService.getTodos().filter((todo) => todo.completed);
   });
 
@@ -58,9 +62,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.scrollSubscription.unsubscribe();
     if (this.observer) this.observer.disconnect();
   }
-
-  constructor(private elementRef: ElementRef) {}
 }
