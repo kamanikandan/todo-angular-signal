@@ -1,0 +1,9 @@
+<div class="grid-item">
+    <h2>{{headingText}}</h2>
+    <ol>
+        @for (todo of todos; track todo.id) {
+        <app-todo-item [todo]="todo" />
+        } @empty {
+        }
+    </ol>
+</div>

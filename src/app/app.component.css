@@ -1,0 +1,9 @@
+.grid {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+}
+
+.lazy-load-level {
+    /* height: 50px; */
+    /* background-color: aqua; */
+}

@@ -1,0 +1,4 @@
+<li>
+    <button [ngClass]="{'completed': todo.completed}" (click)="todoService.toggleCompleted(todo.id)"
+        type="button">{{todo.title}}</button>
+</li>

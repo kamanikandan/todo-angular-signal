@@ -1,0 +1,15 @@
+li {
+    margin-bottom: 10px;
+    button {
+        font-size: 20px;
+        cursor: pointer;
+        background-color: yellow;
+    }
+    button.completed {
+        background-color: greenyellow;
+    }
+}
+
+.completed {
+    text-decoration: line-through;
+}

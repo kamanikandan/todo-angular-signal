@@ -1,0 +1,13 @@
+.grid-item-skeleton {
+    h2 {
+        padding-left: 25px;
+        text-transform: uppercase;
+    }
+    ol li {
+        width: 500px;
+        height: 30px;
+        background-color: #ccc;
+        margin-bottom: 10px;
+    }
+}
+
