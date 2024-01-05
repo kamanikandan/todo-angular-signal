@@ -4,6 +4,7 @@
         @for (todo of todos; track todo.id) {
         <app-todo-item [todo]="todo" />
         } @empty {
+        <h3>No TODO as of now.</h3>
         }
     </ol>
 </div>

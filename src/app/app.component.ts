@@ -8,7 +8,6 @@ import {
   inject,
 } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Subscription } from 'rxjs';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoSkeletonComponent } from './components/todo-skeleton/todo-skeleton.component';
 import { TodoService } from './services/todo.service';
@@ -27,7 +26,6 @@ import { TodoService } from './services/todo.service';
 })
 export class AppComponent implements OnInit, OnDestroy {
   todoService = inject(TodoService);
-  private scrollSubscription!: Subscription;
   private observer!: IntersectionObserver;
 
   constructor(private elementRef: ElementRef) {}
@@ -48,8 +46,6 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   todosCompleted = computed(() => {
-    this.scrollSubscription.unsubscribe();
-
     return this.todoService.getTodos().filter((todo) => todo.completed);
   });
 
